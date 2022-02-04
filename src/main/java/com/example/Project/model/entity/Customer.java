@@ -26,6 +26,7 @@ public class Customer {
     @Column(name = "gender")
     private String gender;
 
+
     @Column(name = "email")
     private String email;
 
