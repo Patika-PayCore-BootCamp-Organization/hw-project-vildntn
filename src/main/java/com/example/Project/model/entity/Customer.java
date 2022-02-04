@@ -2,9 +2,7 @@ package com.example.Project.model.entity;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -13,7 +11,7 @@ import javax.persistence.Id;
 
 public class Customer {
     @Id
-    @Generated()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "first_name")
