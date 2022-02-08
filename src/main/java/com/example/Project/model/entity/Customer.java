@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
+@Table(name = "customers")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,5 +29,9 @@ public class Customer {
 
     @Column(name = "email")
     private String email;
+
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn( name = "room_id")
+    private Room room;
 
 }
