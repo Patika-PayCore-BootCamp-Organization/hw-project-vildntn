@@ -3,16 +3,18 @@ package com.example.Project.controller;
 import com.example.Project.model.entity.EventReservation;
 import com.example.Project.model.entity.Hostel;
 import com.example.Project.service.HostelService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/hostel")
 public class HostelController {
-    @Autowired
-    private HostelService hostelService;
+
+    private final HostelService hostelService;
 
     @GetMapping("/getAll")
     public List<Hostel> getAll() {

@@ -3,16 +3,18 @@ package com.example.Project.controller;
 
 import com.example.Project.model.entity.Room;
 import com.example.Project.service.RoomService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/room")
 public class RoomController {
-    @Autowired
-    private RoomService roomService;
+
+    private final RoomService roomService;
 
     @GetMapping("/getAll")
     public List<Room> getAll() {

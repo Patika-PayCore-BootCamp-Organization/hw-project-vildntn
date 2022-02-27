@@ -3,16 +3,18 @@ package com.example.Project.controller;
 import com.example.Project.model.entity.EventReservation;
 import com.example.Project.service.EventReservationService;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/eventReservaions")
 public class EventReservationController {
-    @Autowired
-    private EventReservationService eventReservationService;
+
+    private final EventReservationService eventReservationService;
 
     @GetMapping("/getAll")
     public List<EventReservation> getAll() {
