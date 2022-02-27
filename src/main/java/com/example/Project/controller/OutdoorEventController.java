@@ -3,16 +3,18 @@ package com.example.Project.controller;
 import com.example.Project.model.entity.HostelReservation;
 import com.example.Project.model.entity.OutDoorEvent;
 import com.example.Project.service.OutdoorEventService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/outdoorEvent")
 public class OutdoorEventController {
-    @Autowired
-    private OutdoorEventService outdoorEventService;
+
+    private final OutdoorEventService outdoorEventService;
 
     @GetMapping("/getAll")
     public List<OutDoorEvent> getAll() {
