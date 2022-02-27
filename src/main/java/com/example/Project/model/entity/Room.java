@@ -20,8 +20,8 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "room_name")
-    private String roomName;
+    @Column(name = "room_number")
+    private int roomNumber;
 
     /*@Column(name = "room_number")
     private int roomNumber;*/
